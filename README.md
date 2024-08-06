@@ -11,6 +11,7 @@ Repository with instructions to install Forecastle on Kubernetes
 - [Install](#install)
   - [Kustomize](#kustomize)
   - [Helm](#helm)
+- [My Personal Install with Flux](#my-personal-install-with-flux)
 
 ## Install
 
