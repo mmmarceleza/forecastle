@@ -12,7 +12,7 @@ metadata:
     release: "forecastle"
     heritage: "Helm"
   name: forecastle
-  namespace: default
+  namespace: forecastle
 ---
 # Source: forecastle/templates/rbac.yaml
 kind: ClusterRole
@@ -28,24 +28,24 @@ metadata:
     release: "forecastle"
     heritage: "Helm"
 rules:
-- apiGroups: [""]
-  resources: ["namespaces"]
-  verbs: ["get", "list"]
-- apiGroups: ["networking.k8s.io"]
-  resources: ["ingresses"]
-  verbs: ["get", "list"]
-- apiGroups: ["route.openshift.io"]
-  resources: ["routes"]
-  verbs: ["get", "list"]
-- apiGroups: ["traefik.containo.us"]
-  resources: ["ingressroutes"]
-  verbs: ["get", "list"]
-- apiGroups: ["traefik.io"]
-  resources: ["ingressroutes"]
-  verbs: ["get", "list"]
-- apiGroups: ["forecastle.stakater.com"]
-  resources: ["forecastleapps"]
-  verbs: ["get", "list"]
+  - apiGroups: [""]
+    resources: ["namespaces"]
+    verbs: ["get", "list"]
+  - apiGroups: ["networking.k8s.io"]
+    resources: ["ingresses"]
+    verbs: ["get", "list"]
+  - apiGroups: ["route.openshift.io"]
+    resources: ["routes"]
+    verbs: ["get", "list"]
+  - apiGroups: ["traefik.containo.us"]
+    resources: ["ingressroutes"]
+    verbs: ["get", "list"]
+  - apiGroups: ["traefik.io"]
+    resources: ["ingressroutes"]
+    verbs: ["get", "list"]
+  - apiGroups: ["forecastle.stakater.com"]
+    resources: ["forecastleapps"]
+    verbs: ["get", "list"]
 ---
 # Source: forecastle/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -65,6 +65,6 @@ roleRef:
   kind: ClusterRole
   name: forecastle-cluster-ingress-role
 subjects:
-- kind: ServiceAccount
-  name: forecastle
-  namespace: default
+  - kind: ServiceAccount
+    name: forecastle
+    namespace: forecastle

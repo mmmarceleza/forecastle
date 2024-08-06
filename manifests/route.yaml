@@ -4,7 +4,7 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   name: forecastle
-  namespace: default
+  namespace: forecastle
   labels:
     app: forecastle
     group: com.stakater.platform
