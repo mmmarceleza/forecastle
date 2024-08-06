@@ -1,0 +1,17 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: stakater
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://stakater.github.io/stakater-charts
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: getupcloud
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://charts.getup.io/getupcloud

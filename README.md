@@ -37,3 +37,12 @@ helm upgrade --install forecastle forecastle \
 --set "forecastle.config.namespaceSelector.any=true" \
 --set "forecastle.config.namespaceSelector.matchNames=[]"
 ```
+
+## My Personal Install with Flux
+
+> [!NOTE]
+> This is for my environmental using my local cluster with [Kind](https://github.com/mmmarceleza/kind).
+
+```bash
+kustomize build github.com/mmmarceleza/forecastle//flux | kubectl apply -f-
+```
