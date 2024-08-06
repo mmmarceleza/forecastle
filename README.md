@@ -2,7 +2,7 @@
 
 Repository with instructions to install Forecastle on Kubernetes
 
-> [!IMPORTANT]
+> [!WARNING]
 > This is a personal repository to help me to install Forecastle in my clusters.
 > To get official information, visit the [Forecastle repository](https://github.com/stakater/Forecastle).
 
